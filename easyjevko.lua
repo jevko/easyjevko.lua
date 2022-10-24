@@ -145,8 +145,21 @@ local function stringify_jevko_pretty(jevko, indent)
   return ret..escape(suffix)
 end
 
+local function to_string(value)
+  return jevko.to_string(to_jevko(value))
+end
+local function to_pretty_string(value)
+  return stringify_jevko_pretty(to_jevko(value))
+end
+local function from_string(str)
+  return from_jevko(jevko.from_string(str))
+end
+
 easyjevko.from_jevko = from_jevko
 easyjevko.to_jevko = to_jevko
+easyjevko.to_string = to_string
+easyjevko.to_pretty_string = to_pretty_string
+easyjevko.from_string = from_string
 easyjevko.encode_pretty = stringify_jevko_pretty
 
 return easyjevko

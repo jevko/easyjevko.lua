@@ -2,9 +2,13 @@
 
 # easyjevko.lua
 
-A single-file library for Easy Jevko, a simple format built on [Jevko](https://jevko.org). 
+A library for Easy Jevko, a simple format built on [Jevko](https://jevko.org). 
 
 Transforms Jevko to Lua values and back.
+
+# Dependencies
+
+[jevko.lua](https://github.com/jevko/jevko.lua) `0.1.0` -- [a copy](jevko.lua?raw=1) is included.
 
 # Features
 
@@ -15,13 +19,19 @@ Transforms Jevko to Lua values and back.
 
 # Usage
 
-Copy the [easyjevko.lua](jevko.lua?raw=1) file into your project and require it:
+Copy the [easyjevko.lua](easyjevko.lua?raw=1) file into your project and require it:
 
 ```lua
 easyjevko = require "easyjevko"
 ```
 
 You can now use the following functions:
+
+## easyjevko.from_string(str)
+
+## easyjevko.to_string(value)
+
+## easyjevko.to_pretty_string(value)
 
 ## easyjevko.from_jevko(jevko)
 
