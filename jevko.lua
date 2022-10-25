@@ -45,7 +45,7 @@ local function parse_jevko(str)
         error("Invalid digraph ("..escaper..c..") at "..line..":"..column.."!")
       end
     elseif c == escaper then
-      prefix = prefix..str.sub(h, i - 1)
+      prefix = prefix..str:sub(h, i - 1)
       h = i + 1
       is_escaped = true
     elseif c == opener then
@@ -106,7 +106,13 @@ local function stringify_jevko(jevko)
 end
 
 jevko.decode = parse_jevko
+jevko.from_string = parse_jevko
+jevko.fromString = parse_jevko
+
 jevko.encode = stringify_jevko
+jevko.to_string = stringify_jevko
+jevko.toString = stringify_jevko
+
 jevko.escape = escape
 
 return jevko
