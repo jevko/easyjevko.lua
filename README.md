@@ -29,6 +29,22 @@ You can now use the following functions:
 
 ## easyjevko.from_string(str)
 
+Input: string which contains a Jevko.
+
+Description:
+
+* A Jevko without subjevkos is converted to a string.
+* A Jevko with subjevkos is converted to a table. The first subjevko decides the kind of table:
+  * If the first subjevko has empty or whitespace-only prefix then the Jevko will be converted to an array.
+  * Otherwise the Jevko will be converted to a map.
+* Leading and trailing spaces in object keys are ignored.
+
+Output: Lua table/string.
+
+```js
+easyjevko.from_string("a [b]") // -> {a = "b"}
+```
+
 ## easyjevko.to_string(value)
 
 ## easyjevko.to_pretty_string(value)
